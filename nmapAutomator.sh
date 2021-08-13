@@ -323,6 +323,7 @@ networkScan() {
 # Port Nmap port scan
 portScan() {
         printf "${GREEN}---------------------Starting Port Scan-----------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         if ! $REMOTE; then
@@ -340,6 +341,7 @@ portScan() {
 # Nmap version and default script scan on found ports
 scriptScan() {
         printf "${GREEN}---------------------Starting Script Scan-----------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         if ! $REMOTE; then
@@ -372,6 +374,7 @@ scriptScan() {
 # Nmap scan on all ports
 fullScan() {
         printf "${GREEN}---------------------Starting Full Scan------------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         if ! $REMOTE; then
@@ -416,6 +419,7 @@ fullScan() {
 # Nmap UDP scan
 UDPScan() {
         printf "${GREEN}----------------------Starting UDP Scan------------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         if ! $REMOTE; then
@@ -460,6 +464,7 @@ UDPScan() {
 # Nmap vulnerability detection script scan
 vulnsScan() {
         printf "${GREEN}---------------------Starting Vulns Scan-----------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         if ! $REMOTE; then
@@ -574,6 +579,7 @@ recon() {
 # Recommend recon tools/commands to be run on found ports
 reconRecommend() {
         printf "${GREEN}---------------------Recon Recommendations---------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         IFS="
@@ -726,6 +732,7 @@ runRecon() {
         echo
         echo
         printf "${GREEN}---------------------Running Recon Commands--------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n"
 
         IFS="
@@ -766,6 +773,7 @@ runRecon() {
 footer() {
 
         printf "${GREEN}---------------------Finished all scans------------------------\n"
+        printf "Target:${HOST}\n"
         printf "${NC}\n\n"
 
         elapsedEnd="$(date '+%H:%M:%S' | awk -F: '{print $1 * 3600 + $2 * 60 + $3}')"
